@@ -1,0 +1,5 @@
+{"event_id": "OBS-FOOD-074", "zone": "FOOD", "event_time": "2026-09-26T19:14:00Z", "arrival_time": "2026-09-26T19:20:00Z", "occupancy": 232, "queue_wait_minutes": 14.3}
+{"event_id": "OBS-HARBOR-071", "zone": "HARBOR", "event_time": "2026-09-26T19:11:00Z", "arrival_time": "2026-09-26T19:26:00Z", "occupancy": 439, "queue_wait_minutes": 17.89}
+{"event_id": "OBS-GROVE-072", "zone": "GROVE", "event_time": "2026-09-26T19:12:00Z", "arrival_time": "2026-09-26T19:27:00Z", "occupancy": 511, "queue_wait_minutes": 9.13}
+{"event_id": "OBS-FOOD-073", "zone": "FOOD", "event_time": "2026-09-26T19:13:00Z", "arrival_time": "2026-09-26T19:28:00Z", "occupancy": 232, "queue_wait_minutes": 13.47}
+{"event_id": "OBS-MAIN-073", "zone": "MAIN", "event_time": "2026-09-26T19:13:00Z", "arrival_time": "2026-09-26T19:28:00Z", "occupancy": 254, "queue_wait_minutes": 1.49}
