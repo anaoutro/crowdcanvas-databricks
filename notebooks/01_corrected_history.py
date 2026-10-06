@@ -31,7 +31,7 @@ incoming=(raw.withColumn("payload_hash",F.sha2(F.to_json(F.struct(*[F.col(c) for
     .withColumn("source_file",F.lit(input_path)).withColumn("ingested_at",F.current_timestamp()).dropDuplicates(["payload_hash"]))
 bronze_table=f"{prefix}.bronze_snapshots"
 if not spark.catalog.tableExists(bronze_table):
-    incoming.write.format("delta").mode("errorifexists").saveAsTable(bronze_table)
+    incoming.write.format("delta").mode("append").saveAsTable(bronze_table)
 else:
     (DeltaTable.forName(spark,bronze_table).alias("t").merge(incoming.alias("s"),"t.payload_hash=s.payload_hash")
      .whenNotMatchedInsertAll().execute())
@@ -91,3 +91,4 @@ summary.write.format("delta").mode("overwrite").option("overwriteSchema",True).s
 assert windows.filter("samples > 5").count()==0
 display(summary.orderBy("zone"));display(windows.filter("pressure OR NOT complete").orderBy("window_start","zone"))
 display(quarantine.select("event_id","quality_reason"))
+
