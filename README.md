@@ -67,12 +67,25 @@ flowchart LR
 
 Upload the CSV and stream_input directory to a Unity Catalog volume; import both notebooks. Configure the catalog, schema, input paths and checkpoint path. Requires compatible Databricks compute with PySpark/Delta, volume access and table creation/write rights. Full instructions are in [setup](docs/SETUP.md).
 
+## Databricks history execution evidence — October 5, 2026
+
+User-provided screenshots show CrowdCanvas_History_Databricks on Serverless, successful historical pipeline cells and the Gold zone summary.
+
+The supplied [results report](docs/evidence/CrowdCanvas_Results_Report.pdf) records 302 Bronze payloads, 8 quarantined payloads, 294 Silver observations, 27 late arrivals, 60 windows and 6 incomplete windows. Its counts match the repository fixture, and its zone capacities and peaks match the visible workspace table.
+
+[Mobile presentation](docs/evidence/CrowdCanvas_English_Demo.mp4) · [Workspace execution screenshot](docs/evidence/Databricks_History_Execution.png) · [Workspace results screenshot](docs/evidence/Databricks_History_Results.png)
+
+**Evidence scope:** history execution and a generated summary are shown. The final assertion cell, a second replay, the watermarked streaming notebook and separate SQL execution were not supplied. The PDF is supporting output; it alone does not prove platform assertions. Data are synthetic and no real festival or crowd-safety outcome is claimed.
+
 ## Verification status
 
 **Executed locally:** 14 portable business tests and deterministic fixture generation. Source/link checks and browser verification are in [VALIDATION.md](VALIDATION.md).
 
-**Pending:** notebook execution, watermark behavior, Delta integration, runtime privileges and SQL execution in a Databricks workspace. No actual streaming output or performance result is claimed. CI exercises the reference model, not the Databricks runtime.
+**Workspace evidence:** screenshots show successful historical PySpark/Delta cells and a generated Gold summary on Databricks Serverless. Supplied report metrics match the fixture.
+
+**Pending:** final historical assertion evidence, second-run replay verification, streaming execution and watermark behavior, separate SQL queries and production orchestration. No actual streaming output or performance result is claimed. CI exercises the reference model, not the Databricks runtime.
 
 [Architecture decisions](docs/ARCHITECTURE.md) · [Data contract](docs/DATA-CONTRACT.md) · [Artwork sources](docs/design/README.md) · [Contributing](CONTRIBUTING.md) · [MIT license](LICENSE)
 
 All attendees are represented only by synthetic anonymous aggregate snapshots. No real location tracking, live sensor connector or production deployment is included.
+
